@@ -56,7 +56,7 @@ function validate_add()
                 mkdir("database", 0777);
                 fwrite($handle,  base64_encode(json_encode($s_data)) . "\r\n");
             }
-            // print_r(file($path));
+            fclose($handle);
         }
     } else {
         echo "<h1>Make sure you supplied all data!</h1>";
@@ -67,6 +67,7 @@ include('header.php');
 ?>
 
 <main>
+    <h1 align="center">Registeration Page</h1>
     <h1>
         <?php
         echo isset($_SESSION['errmessage']) ? (isset($_SESSION['errmessage']['general']) ? $_SESSION['errmessage']['general'] : "") : "";
@@ -97,7 +98,7 @@ include('header.php');
 
             <input type="radio" name="gender" id="female" value="female" required>
             <label for="female">Female</label>
-            <h3><?php echo  (isset($_SESSION['errmessage']['gender']) ? $_SESSION['errmessage']['gender'] : "") ?></h3>
+            <h3><?php echo (isset($_SESSION['errmessage']['gender']) ? $_SESSION['errmessage']['gender'] : "") ?></h3>
         </div>
 
         <div>
