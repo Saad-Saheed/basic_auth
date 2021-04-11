@@ -2,6 +2,8 @@
 session_start();
 
 include('header.php');
+if(!isset($_SESSION['current_user']))
+    header("location: login.php");
 ?>
 
 <main>
