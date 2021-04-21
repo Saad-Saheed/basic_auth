@@ -5,7 +5,7 @@ session_start();
 $user = (isset($_SESSION['current_user'])) ? $_SESSION['current_user'] : null;
 $user = (object) $user;
 
-if(isset($_GET['action']) && $_GET['action'] == "logout")
+if (isset($_GET['action']) && $_GET['action'] == "logout")
     logout();
 
 function logout()
@@ -41,8 +41,7 @@ function logout()
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
                 <?php
-                } else {
-                ?>
+                } else {  ?>
                     <li><a href="?action=logout">Logout</a></li>
                 <?php } ?>
             </ul>

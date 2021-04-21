@@ -1,5 +1,4 @@
 <?php
-ini_set("session.cookie_lifetime", 1200);
 session_start();
 
 $errmessage = [];
@@ -87,7 +86,7 @@ include('header.php');
         <div>
             <input type="submit" name="authlogin" value="Login"><br><br>
             <span>I am new here? <a href="register.php">Register</a></span><br><br>
-            <span>Forget Password? <a href="reset_password.php">Reset Password</a></span>
+            <span>Forget Password? <a href="reset_password.php">forget Password</a></span>
 
         </div>
 

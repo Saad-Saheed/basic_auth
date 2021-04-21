@@ -1,5 +1,5 @@
 <?php
-ini_set("session.cookie_lifetime", 1200);
+// ini_set("session.cookie_lifetime", 1200);
 session_start();
 
 $errmessage = [];
@@ -37,7 +37,6 @@ function validate_reset()
             // if database folder and user.text has been created
             if (file_exists($path) && filesize($path) > 0) {
 
-
                 $users = [];
                 //loop through each line in our database
                 while (!feof($handle)) {
@@ -56,9 +55,7 @@ function validate_reset()
                 }
                 if ($found) {
 
-                    // echo "<pre>";
-                    // print_r($users);
-                    // echo "</pre>";
+                  
                     file_put_contents($path, "");
                     // re write all datas to the file and lock the file while adding datas
                     foreach ($users as $this_user) {
@@ -108,8 +105,6 @@ include('header.php');
         <br>
         <div>
             <input type="submit" name="authreset" value="Change Password"><br>
-            <span>I just remember? <a href="login.php">Login</a></span>
-
         </div>
 
     </form>
